@@ -31,13 +31,12 @@ namespace WebApi.Utils
                     break;
                 case 3:
                     xml = new CFE();
-                    Console.WriteLine("Chegou CFE");
                     break;
                 case 4:
                     xml = new CTE();
                     break;
                 default:
-                    Console.WriteLine("Tipo inválido");
+                    Console.WriteLine("Indefinido");
                     break;
             }
             xml.TypeXml = Enum.Parse<EnumTypeXml>(document["TypeXml"].ToString()!);
