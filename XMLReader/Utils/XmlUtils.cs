@@ -2,7 +2,7 @@
 using XMLReader.Data.Enum;
 using System.Xml;
 
-namespace XMLReader.Tools;
+namespace XMLReader.Utils;
 
 public class XmlUtils
 {

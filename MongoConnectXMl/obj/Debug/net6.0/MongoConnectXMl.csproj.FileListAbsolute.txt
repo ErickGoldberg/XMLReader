@@ -1,12 +1,12 @@
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\bin\Debug\net6.0\MongoConnectXMl.deps.json
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\bin\Debug\net6.0\MongoConnectXMl.dll
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\bin\Debug\net6.0\MongoConnectXMl.pdb
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.csproj.AssemblyReference.cache
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.AssemblyInfoInputs.cache
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.AssemblyInfo.cs
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.csproj.CoreCompileInputs.cache
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.dll
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\refint\MongoConnectXMl.dll
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.pdb
-C:\Users\Dev\Desktop\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\ref\MongoConnectXMl.dll
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\bin\Debug\net6.0\MongoConnectXMl.deps.json
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\bin\Debug\net6.0\MongoConnectXMl.dll
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\bin\Debug\net6.0\MongoConnectXMl.pdb
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.csproj.AssemblyReference.cache
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.AssemblyInfoInputs.cache
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.AssemblyInfo.cs
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.csproj.CoreCompileInputs.cache
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.dll
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\refint\MongoConnectXMl.dll
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\MongoConnectXMl.pdb
+C:\Users\erick\OneDrive\Área de Trabalho\leitura-xml-master\leitura-xml-master\MongoConnectXMl\obj\Debug\net6.0\ref\MongoConnectXMl.dll

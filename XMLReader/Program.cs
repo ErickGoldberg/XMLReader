@@ -1,9 +1,9 @@
 ﻿using XMLReader.Data;
 using XMLReader.Data.Enum;
 using XMLReader.Helper;
-using XMLReader.Tools;
 using System.Xml;
-using MongoConnectXMl.Helper;
+using XMLReader.Utils;
+
 
 namespace XMLReader
 {
@@ -15,7 +15,7 @@ namespace XMLReader
 
             ActionsMongo actionsMongo = new();
 
-            string[] diretorio = Directory.GetFiles(@"C:\Users\Dev\Desktop\XMLs");
+            string[] diretorio = Directory.GetFiles(@"C:\Users\erick\OneDrive\Área de Trabalho\XMLs");
 
             int count = 0;
 
@@ -51,7 +51,7 @@ namespace XMLReader
                             fileName = $@"\{nfe.NumberXml}.xml";
                             break;
                         case EnumTypeXml.Outros:
-                            src = @"C:\Users\Dev\Desktop\XMLsOrganizados/outros";
+                            src = @"C:\Users\erick\OneDrive\Área de Trabalho\XMLsOrganizados/outros";
                             fileName = $@"\outros{count}.xml";
                             count++;
                             break;
@@ -65,7 +65,7 @@ namespace XMLReader
                 }
             }
 
-            string srcPlanilhas = @"C:\Users\Dev\Desktop\XMLsOrganizados";
+            string srcPlanilhas = @"C:\Users\erick\OneDrive\Área de Trabalho\XMLsOrganizados";
             try
             {
                 ExcelUtils.CreateDirectoryXls(srcPlanilhas, listaDeNotas);
@@ -74,6 +74,7 @@ namespace XMLReader
             {
                 Console.WriteLine(e.Message);
             }
+            
             try
             {
                 actionsMongo.CreateListXmls(listaDeNotas);
@@ -83,7 +84,7 @@ namespace XMLReader
                 Console.WriteLine(e.Message);
                 throw;
             }
-
+            
         }
     }
 }

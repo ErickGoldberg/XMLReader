@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 
+
 namespace MongoConnectXMl.Configure;
 
 public class DataBaseConfigure

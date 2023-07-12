@@ -1,7 +1,7 @@
 ﻿using ClosedXML.Excel;
 using XMLReader.Data;
 
-namespace XMLReader.Tools;
+namespace XMLReader.Utils;
 
 public class ExcelUtils
 {

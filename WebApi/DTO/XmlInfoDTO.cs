@@ -2,7 +2,6 @@
 using XMLReader.Data.Enum;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
-using ThirdParty.Json.LitJson;
 using System.Text.Json.Serialization;
 
 namespace WebApi.DTO

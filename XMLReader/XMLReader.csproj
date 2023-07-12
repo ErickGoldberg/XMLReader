@@ -10,6 +10,11 @@
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.102.0" />
     <PackageReference Include="MongoDB.Bson" Version="2.20.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\leitura-xml-master\leitura-xml-master\MongoConnectXMl\MongoConnectXMl.csproj" />
   </ItemGroup>
 
 </Project>

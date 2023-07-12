@@ -10,8 +10,4 @@
     <PackageReference Include="MongoDB.Driver" Version="2.20.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\XMLReader\XMLReader.csproj" />
-  </ItemGroup>
-
 </Project>

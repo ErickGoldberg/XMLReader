@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{EE526AF4-8B18-4B5D-B603-940AEB9322D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoConnectXMl", "MongoConnectXMl\MongoConnectXMl.csproj", "{1E252F0A-72EE-4694-AFB0-A69BA39762AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoConnectXMl", "..\..\leitura-xml-master\leitura-xml-master\MongoConnectXMl\MongoConnectXMl.csproj", "{8E4FEFD7-5044-4789-825E-540787887648}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{EE526AF4-8B18-4B5D-B603-940AEB9322D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE526AF4-8B18-4B5D-B603-940AEB9322D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE526AF4-8B18-4B5D-B603-940AEB9322D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E252F0A-72EE-4694-AFB0-A69BA39762AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E252F0A-72EE-4694-AFB0-A69BA39762AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E252F0A-72EE-4694-AFB0-A69BA39762AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E252F0A-72EE-4694-AFB0-A69BA39762AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4FEFD7-5044-4789-825E-540787887648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4FEFD7-5044-4789-825E-540787887648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4FEFD7-5044-4789-825E-540787887648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4FEFD7-5044-4789-825E-540787887648}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
