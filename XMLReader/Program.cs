@@ -15,7 +15,7 @@ namespace XMLReader
 
             ActionsMongo actionsMongo = new();
 
-            string[] diretorio = Directory.GetFiles(@"C:\Users\erick\OneDrive\Área de Trabalho\XMLs");
+            string[] diretorio = Directory.GetFiles(@"C:\Users\Dev\Desktop\XMLs");
 
             int count = 0;
 
@@ -51,12 +51,11 @@ namespace XMLReader
                             fileName = $@"\{nfe.NumberXml}.xml";
                             break;
                         case EnumTypeXml.Outros:
-                            src = @"C:\Users\erick\OneDrive\Área de Trabalho\XMLsOrganizados/outros";
+                            src = @"C:\Users\Dev\Desktop\XMLsOrganizados/others";
                             fileName = $@"\outros{count}.xml";
                             count++;
                             break;
                     }
-
                     XmlUtils.CreateDirectory(src, file, fileName);
                 }
                 catch (Exception e)
@@ -65,7 +64,7 @@ namespace XMLReader
                 }
             }
 
-            string srcPlanilhas = @"C:\Users\erick\OneDrive\Área de Trabalho\XMLsOrganizados";
+            string srcPlanilhas = @"C:\Users\Dev\Desktop\XMLsOrganizados";
             try
             {
                 ExcelUtils.CreateDirectoryXls(srcPlanilhas, listaDeNotas);

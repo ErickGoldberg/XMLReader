@@ -12,12 +12,12 @@
     "WebApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "launchUrl": "swagger",
+      "launchBrowser": true, 
+      "launchUrl": "http://localhost:3000", // Alterado para a URL do front-end
       "applicationUrl": "https://localhost:7196;http://localhost:5071",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }
-} }
+}

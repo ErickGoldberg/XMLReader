@@ -174,7 +174,11 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Js\App.js" />
+    <Content Include="Js\Components\NavBar.js" />
     <Content Include="Js\Components\Table.js" />
+    <Content Include="Js\Protocols\AxiosConection.js" />
+    <Content Include="Js\Store\Consts.js" />
+    <Content Include="Js\Store\Main.js" />
     <Content Include="mongocrypt.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -202,9 +206,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Js\Protocols\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

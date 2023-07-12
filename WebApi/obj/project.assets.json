@@ -1753,9 +1753,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "ClosedXML": "0.102.0",
-          "MongoConnectXMl": "1.0.0",
-          "MongoDB.Bson": "2.20.0",
-          "MongoDB.Driver": "2.20.0"
+          "MongoConnectXMl": "1.0.0"
         },
         "compile": {
           "bin/placeholder/XMLReader.dll": {}
@@ -5676,8 +5674,8 @@
     },
     "MongoConnectXMl/1.0.0": {
       "type": "project",
-      "path": "../../../leitura-xml-master/leitura-xml-master/MongoConnectXMl/MongoConnectXMl.csproj",
-      "msbuildProject": "../../../leitura-xml-master/leitura-xml-master/MongoConnectXMl/MongoConnectXMl.csproj"
+      "path": "../MongoConnectXMl/MongoConnectXMl.csproj",
+      "msbuildProject": "../MongoConnectXMl/MongoConnectXMl.csproj"
     },
     "XMLReader/1.0.0": {
       "type": "project",
@@ -5693,19 +5691,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\erick\\.nuget\\packages\\": {}
+    "C:\\Users\\Dev\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader\\XMLReader\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Dev\\Desktop\\XMLReader\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader\\XMLReader\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader\\XMLReader\\WebApi\\obj\\",
+      "projectPath": "C:\\Users\\Dev\\Desktop\\XMLReader\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dev\\Desktop\\XMLReader\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5713,6 +5716,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -5720,8 +5724,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader\\XMLReader\\XMLReader\\XMLReader.csproj": {
-              "projectPath": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader\\XMLReader\\XMLReader\\XMLReader.csproj"
+            "C:\\Users\\Dev\\Desktop\\XMLReader\\XMLReader\\XMLReader.csproj": {
+              "projectPath": "C:\\Users\\Dev\\Desktop\\XMLReader\\XMLReader\\XMLReader.csproj"
             }
           }
         }

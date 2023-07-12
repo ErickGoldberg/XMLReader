@@ -950,9 +950,7 @@
       "XMLReader/1.0.0": {
         "dependencies": {
           "ClosedXML": "0.102.0",
-          "MongoConnectXMl": "1.0.0",
-          "MongoDB.Bson": "2.20.0",
-          "MongoDB.Driver": "2.20.0"
+          "MongoConnectXMl": "1.0.0"
         },
         "runtime": {
           "XMLReader.dll": {}
