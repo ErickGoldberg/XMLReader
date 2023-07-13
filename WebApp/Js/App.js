@@ -3,7 +3,7 @@ import Table from "./Components/Table.js";
 import { store, key } from './store/Main.js'
 
 const app = Vue.createApp({
-    components: { NavBar , Table },
+    components: { NavBar, Table },
     template: `
     <NavBar />
     <main>

@@ -1,17 +1,13 @@
-﻿
-import { createStore, useStore } from 'vuex';
-import { RETURN_XMLS, GET_XMLS } from './Consts.js';
+﻿import { RETURN_XMLS, GET_XMLS } from './Consts.js';
 import http from '../protocols/AxiosConection.js';
 
 export const key = Symbol();
 
-export const store = createStore({
-    state() {
-        return {
-            xmls: {
-                xmlsState: []
-            }
-        };
+export const store = Vuex.createStore({
+    state: {
+        xmls: {
+            xmlsState: []
+        }
     },
     mutations: {
         [GET_XMLS](state, listaDeXmls) {
@@ -28,8 +24,8 @@ export const store = createStore({
             return http.get('/file').then(response => commit(GET_XMLS, response.data));
         }
     }
-});
+})
 
 export function UseStore() {
-    return useStore(key);
+    return Vuex.useStore(key);
 }

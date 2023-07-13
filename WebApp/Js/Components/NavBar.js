@@ -1,5 +1,4 @@
-﻿
-export default {
+﻿export default {
     template: `
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -15,8 +14,8 @@ export default {
                 </li>
               </ul>
               <form class="d-flex me-3" role="search">
-                <input class="form-control me-2" v-model="busca" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" @click="fazerBusca()" style="color:white; border-color:white; " type="submit">Search</button>
+                <input class="form-control me-2" v-model="filtro" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" @click="enviarFiltro()" style="color:white; border-color:white; " type="submit">Search</button>
               </form>
             </div>
           </div>
@@ -25,12 +24,12 @@ export default {
     `,
     data() {
         return {
-            busca: ''
+            filtro: ''
         }
     },
     methods: {
-        fazerBusca() {
-            console.log(this.buca);
+        enviarFiltro() {
+            console.log(this.filtro);
         }
     }
 
