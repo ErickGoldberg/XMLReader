@@ -46,7 +46,7 @@ namespace WebApi.Utils
             xml.DtEmit = DateTime.Parse(document["DtEmit"].ToString()!);
             xml.CnpjEmit = document["CnpjEmit"].ToString()!;
             xml.NameEmit = document["NameEmit"].ToString()!;
-            if (tipoDocumento != 2)
+            if (tipoDocumento != 2 && tipoDocumento != 3)
             {
                 xml.CnpjDest = document["CnpjDest"].ToString()!;
                 xml.NameDest = document["NameDest"].ToString()!;

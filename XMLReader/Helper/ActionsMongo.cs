@@ -12,11 +12,13 @@ namespace XMLReader.Helper
         {
             _repository = new XMLRepository<BsonDocument>("XMLReader", "XmlCollection"); ;
         }
+
         public void CreateXMl(IXml xml)
         {
             BsonDocument document = GetBsonDocument(xml);
             _repository.CreateXml(document);
         }
+
         public void CreateListXmls(List<IXml> xmls)
         {
             List<BsonDocument> listaAux = new();
@@ -26,7 +28,6 @@ namespace XMLReader.Helper
             });
             _repository.CreateListXmls(listaAux);
         }
-
 
         public List<BsonDocument> FindAll()
         {
@@ -40,17 +41,20 @@ namespace XMLReader.Helper
             //BsonDocument document = GetBsonDocument(xml);
             _repository.UpdateXML(document => document["_id"].Equals(id), document);
         }
+
         public void RemoveXML(ObjectId id)
         {
             Console.WriteLine(id);
             _repository.RemoveXML(document => document["_id"].Equals(id));
 
         }
+
         public BsonDocument FindByKey(IXml xml)
         {
             BsonDocument document = GetBsonDocument(xml);
             return _repository.FindBy(document => document["XmlKey"].Equals(xml.XmlKey));
         }
+
         public BsonDocument FindById(ObjectId id)
         {
             return _repository.FindById(document => document["_id"].Equals(id));

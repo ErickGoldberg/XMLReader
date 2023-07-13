@@ -1,12 +1,10 @@
-﻿import { RETURN_XMLS } from '../Store/Consts.js'
-import { UseStore } from '../store/Main.js'
+﻿import { UseStore } from '../store/Main.js'
 
 export default {
     template: `
-    <table class="table table-striped display mx-2" id="myTable">
+    <table class="table table-striped table-hover display mx-2" id="myTable">
       <thead>
         <tr>
-          <th scope="col">Id</th>
           <th scope="col">Tipo de XML</th>
           <th scope="col">Número do XML</th>
           <th scope="col">Valor</th>
@@ -16,55 +14,89 @@ export default {
           <th scope="col">Chave do XML</th>
           <th scope="col">CNPJ do destinatário</th>
           <th scope="col">Nome do destinatário</th>
+          <th scope="col">Ações</th>
         </tr>
       </thead>  
     </table>
   `,
     name: "Table",
     mounted() {
-        this.store.dispatch(RETURN_XMLS)
-        this.exibirDataTable()
+        this.ExibirDataTable();
     },
     methods: {
-        async exibirDataTable() {
-            const response = await axios.get("http://localhost:5071/file")
-            const data = await response.data
+        ExibirDataTable() {
+            axios
+                .get("https://localhost:7196/XmlInfo/ListXml")
+                .then((response) => {
+                    this.xmlData = response.data;
+                    this.exibirDataTable();
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        },
+        exibirDataTable() {
             const table = new DataTable("#myTable", {
                 responsive: true,
-                columnsDefs: [{
-                    "defaultContent": "_",
-                    "targets": "_all"
-                }],
-                columns: this.columns,
-                data: data
-            })
-        }
+                searching: false,
+                columnsDefs: [
+                    {
+                        defaultContent: "_",
+                        targets: "_all",
+                    },
+                ],
+                columns: [
+                    { data: "type_xml" },
+                    { data: "numberXml" },
+                    { data: "value" },
+                    { data: "dtEmit" },
+                    { data: "cnpjEmit" },
+                    { data: "nameEmit" },
+                    { data: "xmlKey" },
+                    { data: "cnpjDest" },
+                    { data: "nameDest" },
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            return '<i class="fa fa-trash" aria-hidden="true" @click="excluirItem(' + row.id + ')"></i>';
+                        }  // ver o porque não ta pegando
+                    }
+                ],
+                data: this.xmlData,
+            });
+        },
+        excluirItem(itemId) {
+            const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");
+            if (confirmed) {
+                axios.delete("https://localhost:7196/XmlInfo/DeleteXml/" + itemId)
+                    .then(() => {
+                        console.log("Item excluído com sucesso.");
+
+                        const index = this.xmlData.findIndex(item => item.id === itemId);
+                        if (index > -1) {
+                            this.xmlData.splice(index, 1);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Erro ao excluir o item:", error);
+                    });
+            }
+        },
     },
     computed: {
         xmlsRequisicao() {
-            return this.store.state.xmls.xmlsState
+            return this.store.state.xmls.xmlsState;
         },
     },
     setup() {
-        const store = UseStore()
+        const store = UseStore();
         return {
-            store
-        }
+            store,
+        };
     },
     data() {
         return {
-            columns: [
-                { data: "id" },
-                { data: "type_xml" },
-                { data: "numberXml" },
-                { data: "value" },
-                { data: "dtEmit" },
-                { data: "cnpjEmit" },
-                { data: "nameEmit" },
-                { data: "xmlKey" },
-                { data: "cnpjDest" },
-                { data: "nameDest" },
-            ]
-        }
+            xmlData: [],
+        };
     },
-}
+};

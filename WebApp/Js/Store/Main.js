@@ -21,7 +21,7 @@ export const store = Vuex.createStore({
     },
     actions: {
         [RETURN_XMLS]({ commit }) {
-            return http.get('/file').then(response => commit(GET_XMLS, response.data));
+            return http.get('https://localhost:7196/XmlInfo/ListXml').then(response => commit(GET_XMLS, response.data));
         }
     }
 })
