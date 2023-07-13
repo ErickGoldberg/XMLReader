@@ -1,36 +1,35 @@
-﻿import { createStore } from 'vuex';
-import { RETURN_XMLS, GET_XMLS } from './Consts';
-import http from '../protocols/AxiosConnection';
+﻿
+import { createStore, useStore } from 'vuex';
+import { RETURN_XMLS, GET_XMLS } from './Consts.js';
+import http from '../protocols/AxiosConection.js';
 
 export const key = Symbol();
 
-const state = {
-    xmls: [],
-};
-
-const mutations = {
-    [GET_XMLS](state, listaDeXmls) {
-        state.xmls = listaDeXmls;
-        console.log(listaDeXmls);
+export const store = createStore({
+    state() {
+        return {
+            xmls: {
+                xmlsState: []
+            }
+        };
     },
-};
-
-const actions = {
-    async [RETURN_XMLS]({ commit }) {
-        try {
-            const response = await http.get('/file');
-            console.log(response.data);
-            commit(GET_XMLS, response.data);
-        } catch (error) {
-            console.error(error);
+    mutations: {
+        [GET_XMLS](state, listaDeXmls) {
+            state.xmls.xmlsState = listaDeXmls;
         }
     },
-};
-
-const store = createStore({
-    state,
-    mutations,
-    actions,
+    getters: {
+        xmls(state) {
+            return state.xmls;
+        }
+    },
+    actions: {
+        [RETURN_XMLS]({ commit }) {
+            return http.get('/file').then(response => commit(GET_XMLS, response.data));
+        }
+    }
 });
 
-export default store;
+export function UseStore() {
+    return useStore(key);
+}

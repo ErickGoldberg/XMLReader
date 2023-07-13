@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace MongoConnectXMl.Repository;
 
-public  class XMLRepository<T>
+public class XMLRepository<T>
 {
     private readonly IMongoCollection<T> _xmlCollection;
 
@@ -40,7 +40,7 @@ public  class XMLRepository<T>
         return xmls;
     }
 
-    public void UpdateXML(Expression<Func<T, bool>> filter, T update) =>  _xmlCollection.ReplaceOne(filter, update);
+    public void UpdateXML(Expression<Func<T, bool>> filter, T update) => _xmlCollection.ReplaceOne(filter, update);
 
     public void RemoveXML(Expression<Func<T, bool>> filter) => _xmlCollection.DeleteOne(filter);
 

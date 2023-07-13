@@ -751,24 +751,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dev\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\erick\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dev\\Desktop\\XMLReader\\MongoConnectXMl\\MongoConnectXMl.csproj",
+      "projectUniqueName": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader1\\XMLReader\\MongoConnectXMl\\MongoConnectXMl.csproj",
       "projectName": "MongoConnectXMl",
-      "projectPath": "C:\\Users\\Dev\\Desktop\\XMLReader\\MongoConnectXMl\\MongoConnectXMl.csproj",
-      "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dev\\Desktop\\XMLReader\\MongoConnectXMl\\obj\\",
+      "projectPath": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader1\\XMLReader\\MongoConnectXMl\\MongoConnectXMl.csproj",
+      "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\XMLReader1\\XMLReader\\MongoConnectXMl\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -776,7 +771,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

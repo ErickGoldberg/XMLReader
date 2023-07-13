@@ -163,3 +163,42 @@ C:\Users\Dev\Desktop\XMLReader\XMLReader\bin\Debug\net6.0\MongoConnectXMl.pdb
 C:\Users\Dev\Desktop\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.csproj.CopyComplete
 C:\Users\Dev\Desktop\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.genruntimeconfig.cache
 C:\Users\Dev\Desktop\XMLReader\XMLReader\obj\Debug\net6.0\ref\XMLReader.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\XMLReader.exe
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\XMLReader.deps.json
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\XMLReader.runtimeconfig.json
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\XMLReader.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\XMLReader.pdb
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\DnsClient.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\Irony.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\Snappier.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\XLParser.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\MongoConnectXMl.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\bin\Debug\net6.0\MongoConnectXMl.pdb
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.csproj.AssemblyReference.cache
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.AssemblyInfoInputs.cache
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.AssemblyInfo.cs
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.csproj.CoreCompileInputs.cache
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.csproj.CopyComplete
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\refint\XMLReader.dll
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.pdb
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.genruntimeconfig.cache
+C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\ref\XMLReader.dll

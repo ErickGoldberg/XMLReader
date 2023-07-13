@@ -10,7 +10,7 @@ namespace XMLReader.Helper
 
         public ActionsMongo()
         {
-            _repository = new XMLRepository<BsonDocument>("XMLReader", "XmlCollection"); 
+            _repository = new XMLRepository<BsonDocument>("XMLReader", "XmlCollection"); ;
         }
         public void CreateXMl(IXml xml)
         {
@@ -26,6 +26,7 @@ namespace XMLReader.Helper
             });
             _repository.CreateListXmls(listaAux);
         }
+
 
         public List<BsonDocument> FindAll()
         {
@@ -82,6 +83,7 @@ namespace XMLReader.Helper
                 Console.WriteLine(ex.Message);
                 throw;
             }
+
         }
     }
 }
