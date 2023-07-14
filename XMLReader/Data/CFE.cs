@@ -8,6 +8,8 @@ namespace XMLReader.Data
     public class CFE : IXml
     {
         [BsonId]
+        public string Id { get; set; }
+
         public string XmlKey { get; set; }
 
         [BsonElement("TypeXml")]

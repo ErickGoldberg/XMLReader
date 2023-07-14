@@ -1,20 +1,16 @@
 ﻿import NavBar from "./Components/NavBar.js";
-import Table from "./Components/Table.js";
+import Home from "./Components/Home.js"
+import router from "./router/router.js";
 import { store, key } from './store/Main.js';
 
 const app = Vue.createApp({
-    components: { NavBar, Table },
+    components: { NavBar, Home },
     template: `
     <div>
         <NavBar />
-        <main>
-            <div>
-                <h1 class="text-center" style="margin-top:45px; margin-bottom:20px;">Lista de XMLs:</h1>
-            </div>
-            <Table />
-        </main>
+        <Home />
     </div>
     `,
 });
 
-app.use(store).mount("#app");
+app.use(store).use(router).mount("#app");

@@ -39,6 +39,8 @@ namespace WebApi.Utils
                     Console.WriteLine("Indefinido");
                     break;
             }
+            var id = document["_id"].ToString();
+            xml.Id = id;
             xml.TypeXml = Enum.Parse<EnumTypeXml>(document["TypeXml"].ToString()!);
             xml.XmlKey = document["XmlKey"].ToString()!;
             xml.NumberXml = document["NumberXml"].AsInt32;

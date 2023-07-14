@@ -24,23 +24,21 @@ namespace WebApi.Controllers
             var listaDeXmls = _services.FindAll();
 
             List<XmlInfoDTO> listaDeXmlsDTO = UtilsApi.ParseBsonDocumentsToXMl(listaDeXmls);
-            Console.WriteLine(listaDeXmlsDTO.Count);
             return listaDeXmlsDTO;
         }
 
-        
-        [HttpDelete("DeleteXml/{id}")]
-        public async Task<IActionResult> DeleteXml(int id)
+        [Route("DeleteXml")]
+        [HttpGet]
+        public async Task<IActionResult> DeleteXml(string id)
         {
             try
             {
                 var listaDeXmls = _services.FindAll();
 
-                var xmlItem = listaDeXmls.FirstOrDefault(item => item == id);
+                var xmlItem = listaDeXmls.FirstOrDefault(item => item["id"].ToString() == id);
                 if (xmlItem != null)
                 {
                     listaDeXmls.Remove(xmlItem);
-                    // banco (pelo id ou pela xml key) 
                 }
 
                 return Ok("Excluído com sucesso!");
@@ -50,7 +48,5 @@ namespace WebApi.Controllers
                 return StatusCode(500, $"Erro ao excluir o item: {ex.Message}");
             }
         }
-        
-
     }
 }

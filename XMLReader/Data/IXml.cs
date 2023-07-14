@@ -1,14 +1,15 @@
 ﻿using System;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using XMLReader.Data.Enum;
 
 
 namespace XMLReader.Data
 {
-    //[Serializable]
     public interface IXml
     {
         [BsonId]
+        public string Id { get; set; }
         public string XmlKey { get; set; }
 
         [BsonElement("TypeXml")]

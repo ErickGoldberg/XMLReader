@@ -4,7 +4,7 @@ export default {
     template: `
     <table class="table table-striped table-hover display mx-2" id="myTable">
       <thead>
-        <tr>
+        <tr class="id={xmlData.id}">
           <th scope="col">Tipo de XML</th>
           <th scope="col">Número do XML</th>
           <th scope="col">Valor</th>
@@ -29,7 +29,9 @@ export default {
                 .get("https://localhost:7196/XmlInfo/ListXml")
                 .then((response) => {
                     this.xmlData = response.data;
+                    console.log(response.data)
                     this.exibirDataTable();
+                    console.log(response.data)
                 })
                 .catch((error) => {
                     console.error(error);
@@ -61,7 +63,7 @@ export default {
                         data: null,
                         render: function (data, type, row) {
                             return `
-                <i class="fa fa-trash" aria-hidden="true" data-id="${row.id}"></i>
+                <i class="fa fa-trash" aria-hidden="true" data-id="${data.id}"></i>
               `;
                         },
                     },
@@ -69,17 +71,19 @@ export default {
                 data: this.xmlData,
             });
 
-            // Adiciona um ouvinte de evento de clique na tabela
-            table.on("click", "i.fa-trash", function () {
-                const itemId = this.getAttribute("data-id");
+            const tableBody = table.table().body();
+
+            $(tableBody).on("click", "i.fa-trash", function () {
+                const itemId = $(this).data("id");
                 self.excluirItem(itemId);
             });
+
         },
         excluirItem(itemId) {
             const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");
             if (confirmed) {
                 axios
-                    .delete("https://localhost:7196/XmlInfo/DeleteXml/" + itemId)
+                    .get("https://localhost:7196/XmlInfo/DeleteXml")
                     .then(() => {
                         console.log("Item excluído com sucesso.");
 
@@ -89,7 +93,7 @@ export default {
                         }
                     })
                     .catch((error) => {
-                        console.error("Erro ao excluir o item:", error);
+                        console.error("Erro ao excluir o item: ${error}" );
                     });
             }
         },
@@ -111,3 +115,4 @@ export default {
         };
     },
 };
+

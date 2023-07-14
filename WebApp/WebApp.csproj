@@ -174,12 +174,17 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Js\App.js" />
+    <Content Include="Js\Components\About.js" />
+    <Content Include="Js\Components\Home.js" />
+    <Content Include="Js\Components\Modal.js" />
     <Content Include="Js\Components\NavBar.js" />
     <Content Include="Js\Components\Table.js" />
     <Content Include="Js\Protocols\AxiosConection.js" />
+    <Content Include="Js\Router\Router.js" />
     <Content Include="Js\Store\Consts.js" />
     <Content Include="Js\Store\Main.js" />
     <Content Include="mongocrypt.dll" />
+    <Content Include="Styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

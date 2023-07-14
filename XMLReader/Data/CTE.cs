@@ -8,6 +8,7 @@ namespace XMLReader.Data
     public class CTE : IXml
     {
         [BsonId]
+        public string Id { get; set; }
         public string XmlKey { get; set; }
 
         [BsonElement("CnpjRemetente")]

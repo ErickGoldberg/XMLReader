@@ -8,7 +8,7 @@ namespace WebApi.DTO
 {
     public class XmlInfoDTO
     {
-
+        public string Id { get; set; }
         [JsonPropertyName("type_xml")]
         public EnumTypeXml TypeXml { get; set; }
 
@@ -30,6 +30,7 @@ namespace WebApi.DTO
 
         public XmlInfoDTO(IXml xml)
         {
+            Id = xml.Id;
             TypeXml = xml.TypeXml;
             DtEmit = xml.DtEmit;
             CnpjDest = xml.CnpjDest;

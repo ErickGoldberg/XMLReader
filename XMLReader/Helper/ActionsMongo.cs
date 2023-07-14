@@ -73,7 +73,8 @@ namespace XMLReader.Helper
             { "DtEmit", xml.DtEmit },
             { "CnpjEmit", xml.CnpjEmit },
             { "XmlKey", xml.XmlKey },
-            { "NameEmit", xml.NameEmit }
+            { "NameEmit", xml.NameEmit },
+            { "Id", xml.Id }
         };
                 if (xml.CnpjDest != null || xml.NameDest != null)
                 {

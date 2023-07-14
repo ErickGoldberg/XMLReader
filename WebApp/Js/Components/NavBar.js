@@ -12,24 +12,14 @@
                 <li class="nav-item" style="font-size: 40px;">
                     XML Reader
                 </li>
+                <li class="nav-item">
+                  <router-link class="nav-link active" to="/about">About </router-link>
+                </li>
               </ul>
-              <form class="d-flex me-3" role="search">
-                <input class="form-control me-2" v-model="filtro" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" @click="enviarFiltro()" style="color:white; border-color:white; " type="submit">Search</button>
-              </form>
+              
             </div>
           </div>
         </nav>
     </header>    
-    `,
-    data() {
-        return {
-            filtro: ''
-        }
-    },
-    methods: {
-        enviarFiltro() {
-            console.log(this.filtro);
-        }
-    }
+    `
 }
