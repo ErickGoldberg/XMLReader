@@ -1,4 +1,4 @@
-﻿import { UseStore } from '../store/Main.js'
+﻿import { UseStore } from '../store/Main.js';
 
 export default {
     template: `
@@ -16,7 +16,7 @@ export default {
           <th scope="col">Nome do destinatário</th>
           <th scope="col">Ações</th>
         </tr>
-      </thead>  
+      </thead>
     </table>
   `,
     name: "Table",
@@ -36,6 +36,8 @@ export default {
                 });
         },
         exibirDataTable() {
+            const self = this; // Armazena a referência do componente atual
+
             const table = new DataTable("#myTable", {
                 responsive: true,
                 searching: false,
@@ -58,21 +60,30 @@ export default {
                     {
                         data: null,
                         render: function (data, type, row) {
-                            return '<i class="fa fa-trash" aria-hidden="true" @click="excluirItem(' + row.id + ')"></i>';
-                        }  // ver o porque não ta pegando
-                    }
+                            return `
+                <i class="fa fa-trash" aria-hidden="true" data-id="${row.id}"></i>
+              `;
+                        },
+                    },
                 ],
                 data: this.xmlData,
+            });
+
+            // Adiciona um ouvinte de evento de clique na tabela
+            table.on("click", "i.fa-trash", function () {
+                const itemId = this.getAttribute("data-id");
+                self.excluirItem(itemId);
             });
         },
         excluirItem(itemId) {
             const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");
             if (confirmed) {
-                axios.delete("https://localhost:7196/XmlInfo/DeleteXml/" + itemId)
+                axios
+                    .delete("https://localhost:7196/XmlInfo/DeleteXml/" + itemId)
                     .then(() => {
                         console.log("Item excluído com sucesso.");
 
-                        const index = this.xmlData.findIndex(item => item.id === itemId);
+                        const index = this.xmlData.findIndex((item) => item.id === itemId);
                         if (index > -1) {
                             this.xmlData.splice(index, 1);
                         }
