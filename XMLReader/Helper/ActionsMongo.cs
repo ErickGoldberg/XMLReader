@@ -67,19 +67,19 @@ namespace XMLReader.Helper
             {
                 BsonDocument document = new()
         {
-            { "TypeXml", xml.TypeXml },
-            { "NumberXml", xml.NumberXml },
-            { "Value", xml.Value },
-            { "DtEmit", xml.DtEmit },
-            { "CnpjEmit", xml.CnpjEmit },
-            { "XmlKey", xml.XmlKey },
-            { "NameEmit", xml.NameEmit },
-            { "Id", xml.Id }
+            { "TypeXml", xml?.TypeXml != null ? xml?.TypeXml : ""},
+            { "NumberXml", xml?.NumberXml != null ? xml?.NumberXml : ""},
+            { "Value", xml?.Value != null ? xml?.Value : ""},
+            { "DtEmit", xml?.DtEmit != null ? xml?.DtEmit : ""},
+            { "CnpjEmit", xml?.CnpjEmit != null ? xml?.CnpjEmit : ""},
+            { "XmlKey", xml?.XmlKey != null ? xml?.XmlKey : ""},
+            { "NameEmit", xml?.NameEmit != null ? xml?.NameEmit : ""},
+            { "Id", xml?.Id != null ? xml?.Id : ""}
         };
-                if (xml.CnpjDest != null || xml.NameDest != null)
+                if (xml?.CnpjDest != null || xml?.NameDest != null)
                 {
-                    document.Add("CnpjDest", xml.CnpjDest);
-                    document.Add("NameDest", xml.NameDest);
+                    document.Add("CnpjDest", xml?.CnpjDest);
+                    document.Add("NameDest", xml?.NameDest);
                 }
                 return document;
             }

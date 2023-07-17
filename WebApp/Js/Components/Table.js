@@ -60,8 +60,19 @@ export default {
                 columns: [
                     { data: "type_xml" },
                     { data: "numberXml" },
-                    { data: "value" },
-                    { data: "dtEmit" },
+                    {
+                        data: "value",
+                        render: function (data, type, row) {
+                            return "R$" + parseFloat(data).toFixed(2);
+                        }
+                    },
+                    {
+                        data: "dtEmit",
+                        render: function (data, type, row) {
+                            const dateObj = new Date(data);
+                            return dateObj.toLocaleString();
+                        }
+                    },
                     { data: "cnpjEmit" },
                     { data: "nameEmit" },
                     { data: "xmlKey" },

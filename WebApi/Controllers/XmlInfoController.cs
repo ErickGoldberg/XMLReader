@@ -60,8 +60,8 @@ namespace WebApi.Controllers
                 return BadRequest("Nenhum arquivo enviado");
             }
 
-            Console.WriteLine("Nome do arquivo: " + file.FileName);
-            Console.WriteLine("Tipo do arquivo: " + file.ContentType);
+            Console.WriteLine($"Nome do arquivo: {file.FileName}");
+            Console.WriteLine($"Tipo do arquivo: {file.ContentType} ");
 
             XmlDocument doc = XmlUtils.ReaderXml(file.OpenReadStream());
             EnumTypeXml type = XmlUtils.GetXmlFileType(doc);
@@ -72,7 +72,7 @@ namespace WebApi.Controllers
         }
 
 
-        [HttpDelete("DeleteXml")]
+        [Route("DeleteXml")]
         public async Task<IActionResult> DeleteXml(string id)
         {
             try

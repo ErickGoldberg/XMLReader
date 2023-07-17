@@ -1,5 +1,4 @@
 import { UseStore } from "../store/Main.js";
-//import { POST_XML } from "../Store/Consts.js"
 
 export default {
     template: `
