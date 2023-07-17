@@ -16,7 +16,38 @@
             font-size: 26px;
             padding-top: 10px;
         }
-                                    
+
+        .modal {
+            position: fixed;
+            width: 35%;
+            height: 100%;
+            left:36%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+
+        .modal-content {
+            background-color: steelblue;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .modal-close {
+            position: absolute;
+            font-size:35px;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .btn-outline-success:hover {
+            background-color: white;
+            color: #fff;
+        }
+
     </style>
 </head>
 

@@ -1,7 +1,17 @@
 ﻿import { UseStore } from '../store/Main.js';
+import Modal from './Modal.js'
 
 export default {
+    components: { Modal },
     template: `
+    <div style="display: flex; float: right; flex-direction: row-reverse; ">
+      <modal/>
+      <form class="d-flex me-3" role="search">
+        <button v-if="!showInput" class="btn btn-outline-success" @click="mostrarInput()" style="color:#0D6efd; border-color:#0D6efd; width: 90px;" type="button">Pesquisar</button>
+        <input v-if="showInput" class="form-control me-2" v-model="filtro" type="search" placeholder="Pesquisar xml" style="width: 200px;" aria-label="Search">
+        <button v-if="showInput" class="btn btn-outline-success" @click="sendFilter()" style="color:#0D6efd; border-color:#0D6efd; width: 90px;" type="submit">Pesquisar</button>
+      </form>
+    </div>
     <table class="table table-striped table-hover display mx-2" id="myTable">
       <thead>
         <tr class="id={xmlData.id}">
@@ -29,9 +39,7 @@ export default {
                 .get("https://localhost:7196/XmlInfo/ListXml")
                 .then((response) => {
                     this.xmlData = response.data;
-                    console.log(response.data)
-                    this.exibirDataTable();
-                    console.log(response.data)
+                    this.exibirDataTable();  
                 })
                 .catch((error) => {
                     console.error(error);
@@ -42,7 +50,7 @@ export default {
 
             const table = new DataTable("#myTable", {
                 responsive: true,
-                searching: false,
+                searching: true,
                 columnsDefs: [
                     {
                         defaultContent: "_",
@@ -69,6 +77,14 @@ export default {
                     },
                 ],
                 data: this.xmlData,
+                axios: {
+                    url: `https://localhost:7196/XmlInfo`,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: function (data) {
+                        console.log(data)
+                    }
+                }
             });
 
             const tableBody = table.table().body();
@@ -79,11 +95,18 @@ export default {
             });
 
         },
+        mostrarInput() {
+            this.showInput = true;
+        },
         excluirItem(itemId) {
             const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");
             if (confirmed) {
                 axios
-                    .get("https://localhost:7196/XmlInfo/DeleteXml")
+                    .delete("https://localhost:7196/XmlInfo/DeleteXml", {
+                        params: {
+                            id: itemId,
+                        },
+                    })
                     .then(() => {
                         console.log("Item excluído com sucesso.");
 
@@ -93,7 +116,7 @@ export default {
                         }
                     })
                     .catch((error) => {
-                        console.error("Erro ao excluir o item: ${error}" );
+                        console.error("Erro ao excluir o item:", error);
                     });
             }
         },
@@ -112,6 +135,7 @@ export default {
     data() {
         return {
             xmlData: [],
+            showInput: false
         };
     },
 };

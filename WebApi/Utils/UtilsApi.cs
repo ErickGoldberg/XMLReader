@@ -2,6 +2,8 @@
 using XMLReader.Data.Enum;
 using XMLReader.Data;
 using WebApi.DTO;
+using System.Xml;
+using XMLReader.Helper;
 
 namespace WebApi.Utils
 {
@@ -15,6 +17,45 @@ namespace WebApi.Utils
                 listaDTOs.Add(new XmlInfoDTO(ParseBsonDocumentToXMl(document)));
             });
             return listaDTOs;
+        }
+
+        public static List<BsonDocument> YourCustomSearchFunc( ActionsMongo _services)
+        {
+            var result = _services.FindAll();
+            if (result == null)
+            {
+                return new List<BsonDocument>();
+            }
+            return result;
+        }
+
+        public static IXml CriarIXml(EnumTypeXml typeXml, XmlDocument document)
+        {
+            IXml xml = null;
+            switch (typeXml)
+            {
+
+                case EnumTypeXml.Nfe:
+                    GetNFE get = new GetNFE(document);
+                    xml = get.ReaderNfe();
+                    break;
+                case EnumTypeXml.Nfce:
+                    GetNFE getCte = new GetNFE(document);
+                    xml = getCte.ReaderNfe();
+                    break;
+                case EnumTypeXml.Cfe:
+                    GetCFE getCFE = new GetCFE(document);
+                    xml = getCFE.ReaderData();
+                    break;
+                case EnumTypeXml.CTe:
+                    GetCTE getCTE = new GetCTE(document);
+                    xml = getCTE.ReaderData();
+                    break;
+                default:
+                    Console.WriteLine("Tipo inválido");
+                    break;
+            }
+            return xml;
         }
 
         public static IXml ParseBsonDocumentToXMl(BsonDocument document)

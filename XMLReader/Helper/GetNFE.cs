@@ -1,6 +1,6 @@
-﻿using XMLReader.Data;
-using XMLReader.Data.Enum;
+﻿using XMLReader.Data.Enum;
 using System.Xml;
+using XMLReader.Data;
 
 namespace XMLReader.Helper
 {

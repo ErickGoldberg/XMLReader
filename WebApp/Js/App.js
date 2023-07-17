@@ -1,6 +1,5 @@
 ﻿import NavBar from "./Components/NavBar.js";
 import Home from "./Components/Home.js"
-import router from "./router/router.js";
 import { store, key } from './store/Main.js';
 
 const app = Vue.createApp({
@@ -13,4 +12,4 @@ const app = Vue.createApp({
     `,
 });
 
-app.use(store).use(router).mount("#app");
+app.use(store).mount("#app");

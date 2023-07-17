@@ -1,6 +1,7 @@
 ﻿using XMLReader.Data;
 using XMLReader.Data.Enum;
 using System.Xml;
+using DocumentFormat.OpenXml.Drawing;
 
 namespace XMLReader.Helper;
 
@@ -43,5 +44,4 @@ public class GetCFE : GetData
         string dataManipulada = dataRetornada.Insert(4, "-").Insert(7, "-");
         return DateTime.Parse(dataManipulada);
     }
-
 }

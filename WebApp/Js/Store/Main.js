@@ -1,4 +1,4 @@
-﻿import { RETURN_XMLS, GET_XMLS } from './Consts.js';
+﻿import { RETURN_XMLS, GET_XMLS, GET_FILTERS, POST_XML } from './Consts.js';
 import http from '../protocols/AxiosConection.js';
 
 export const key = Symbol();
@@ -6,17 +6,24 @@ export const key = Symbol();
 export const store = Vuex.createStore({
     state: {
         xmls: {
-            xmlsState: []
+            xmlsState: [],
+            filtro: ''
         }
     },
     mutations: {
         [GET_XMLS](state, listaDeXmls) {
             state.xmls.xmlsState = listaDeXmls;
+        },
+        [GET_FILTERS](state, filtro) {
+            state.xmls.filtro = filtro; 
         }
     },
     getters: {
         xmls(state) {
             return state.xmls;
+        },
+        filtro(state) {
+            return state.filtro
         }
     },
     actions: {

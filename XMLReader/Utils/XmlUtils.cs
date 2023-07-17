@@ -13,6 +13,12 @@ public class XmlUtils
         doc.Load(caminho);
         return doc;
     }
+    public static XmlDocument ReaderXml(Stream stream)
+    {
+        XmlDocument doc = new();
+        doc.Load(stream);
+        return doc;
+    }
 
     public static void CreateDirectory(string src, string item, string fileName)
     {

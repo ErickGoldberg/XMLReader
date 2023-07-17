@@ -1,7 +1,5 @@
 ﻿using XMLReader.Data;
 using XMLReader.Data.Enum;
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
 using System.Text.Json.Serialization;
 
 namespace WebApi.DTO
