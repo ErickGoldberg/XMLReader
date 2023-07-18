@@ -1,6 +1,5 @@
 ﻿import { UseStore } from '../store/Main.js';
 import Modal from './Modal.js'
-
 export default {
     components: { Modal },
     template: `
@@ -58,7 +57,7 @@ export default {
                     },
                 ],
                 columns: [
-                    { data: "type_xml" },
+                    { data: "type_xml" },               
                     { data: "numberXml" },
                     {
                         data: "value",
