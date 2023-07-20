@@ -7,8 +7,6 @@ using XMLReader.Data;
 using XMLReader.Helper;
 using XMLReader.Utils;
 using MongoDB.Bson;
-using DocumentFormat.OpenXml.Presentation;
-using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace WebApi.Controllers
 {
@@ -26,30 +24,25 @@ namespace WebApi.Controllers
 
         [Route("ListXml")]
         [HttpGet]
-        public IEnumerable<XmlInfoDTO> ListarXmls()
+        public IActionResult ListarXmls()
         {
             var listaDeXmls = _services.FindAll();
 
             List<XmlInfoDTO> listaDeXmlsDTO = UtilsApi.ParseBsonDocumentsToXMl(listaDeXmls);
-            return listaDeXmlsDTO;
+            return Ok(new { data = listaDeXmlsDTO }); // Enviar os dados no formato esperado pelo DataTables
         }
 
-        [HttpPost]
-        public IActionResult CustomServerSideSearchAction()
+        private IEnumerable<BsonDocument> ApplyDataTablesProcessing(IEnumerable<BsonDocument> listaDeXmls, DataTablesParams dtParams)
         {
-            var searchValue = Request.Form["search[value]"].FirstOrDefault();
-            var documents = _services.FindAll();
-            var customerData = UtilsApi.ParseBsonDocumentsToXMl(documents);
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                customerData = customerData.Where(dto => dto.CnpjEmit.Contains(searchValue)
-                || dto.NameEmit.Contains(searchValue)
-                || dto.CnpjDest.Contains(searchValue)
-                || dto.NameDest.Contains(searchValue)).ToList();
-            }
+            // Implemente aqui a lógica de ordenação, busca e paginação do lado do servidor.
+            // Use os parâmetros recebidos em dtParams para aplicar a lógica de acordo com as colunas da sua tabela.
 
-            return Ok(customerData);
+            // Exemplo de paginação
+            listaDeXmls = listaDeXmls.Skip(dtParams.Start).Take(dtParams.Length);
+
+            return listaDeXmls;
         }
+
 
         [HttpPost("PostXml")]
         public async Task<IActionResult> CadastrarXml(IFormFile file)
@@ -60,24 +53,20 @@ namespace WebApi.Controllers
                 return BadRequest("Nenhum arquivo enviado");
             }
 
-            Console.WriteLine($"Nome do arquivo: {file.FileName}");
-            Console.WriteLine($"Tipo do arquivo: {file.ContentType} ");
-
             XmlDocument doc = XmlUtils.ReaderXml(file.OpenReadStream());
             EnumTypeXml type = XmlUtils.GetXmlFileType(doc);
             IXml xml = UtilsApi.CriarIXml(type, doc);
             _services.CreateXMl(xml);
 
-            return Ok(xml); 
+            return Ok(xml);
         }
-
 
         [Route("DeleteXml")]
         public async Task<IActionResult> DeleteXml(string id)
         {
             try
             {
-                _services.RemoveXML(ObjectId.Parse(id)); 
+                _services.RemoveXML(ObjectId.Parse(id));
                 return Ok("Excluído com sucesso!");
             }
             catch (Exception ex)

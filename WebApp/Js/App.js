@@ -1,5 +1,5 @@
 ﻿import NavBar from "./Components/NavBar.js";
-import Home from "./Components/Home.js"
+import Home from "./Components/Home.js";
 import { store, key } from './store/Main.js';
 
 const app = Vue.createApp({

@@ -1,7 +1,6 @@
-﻿import { GET_FILTERS } from "../store/Consts.js";
-import { UseStore } from "../Store/Main.js"
+﻿import { UseStore } from "../Store/Main.js"
 
-export default {
+export default {  
     template: `
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -16,21 +15,17 @@ export default {
                     XML Reader
                 </li>
               </ul>
-              
             </div>
           </div>
         </nav>
     </header>    
     `,
     methods: {
-            sendFilter() {
-                this.store.commit(GET_FILTERS, this.filtro)
-            }
-        },
         setup() {
             const store = UseStore()
             return {
                 store
             }
         }
+    }
 }

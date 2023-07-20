@@ -3,25 +3,25 @@ import { UseStore } from "../store/Main.js";
 export default {
     template: `
     <div>
-      <button class="btn btn-outline-success" @click="openModal" style="color:#0D6efd; border-color:#0D6efd; whidth: 50px; margin-right: 20px;">Inserir</button>
+      <button class="btn btn-outline-success" @click="openModal" style="color:#0D6efd; border-color:#0D6efd; whidth: 50px;  float:right; margin-right:10px; margin-bottom: 20px;">Inserir</button>
       <div v-if="isModalOpen" class="modal">
         <div class="modal-content">   
-          <span class="modal-close" @click="closeModal">&times;</span>
-          <h1 style="margin-bottom: 30px;">Inserir XML:</h1>
+          <span class="modal-close" @click="closeModal" style="float: right; border-color: white;">&times;</span>
+          <h1 style="margin-bottom: 30px; color: white;">Inserir XML:</h1>
           <form @submit.prevent="sendXml" novalidate>
             <div class="mb-3">
-              <label for="formFile" class="form-label" style="font-size: 20px;">Escolha o arquivo que quer inserir: </label>
+              <label for="formFile" class="form-label" style="font-size: 20px; color: white;">Escolha o arquivo que quer inserir: </label>
               <input class="form-control" @change="onChangeFile" type="file" id="formFile">
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit" style="float: right">Inserir</button>
+              <button class="btn btn-primary" type="submit" style="float: right; border-color: white;">Inserir</button>
             </div>
           </form>
         </div>
       </div>
     </div>
   `,
-    name: "Modal",
+    name: "Modal", 
     data() {
         return {
             isModalOpen: false,
@@ -46,7 +46,12 @@ export default {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
-            }).then(res => console.log(res))
+            }).then(() => {
+                window.alert("Cadastro realizado com sucesso.");
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            })
         },  
         onChangeFile(event) {
             this.file = event.target.files[0];

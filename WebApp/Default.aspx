@@ -10,6 +10,10 @@
     <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         .fa {
             display: flex;
             justify-content: center;
@@ -21,26 +25,44 @@
             position: fixed;
             width: 35%;
             height: 100%;
-            left:36%;
+            left: 36%;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
         }
 
+        .dataTables_filter input {
+            margin-right: 90px; /* Defina o valor de margem esquerda desejado */
+            position: relative;
+
+        }
+
+        .dataTables_wrapper .dataTables_filter input {
+            border-radius: 5px;
+        }
+
+        .overlay {
+            position: absolute;
+            right: 0;
+            float: right;
+            z-index: 1;
+        }
+
 
         .modal-content {
-            background-color: steelblue;
+            background-color: #0D6efd;
             padding: 30px;
             border-radius: 5px;
         }
 
         .modal-close {
             position: absolute;
-            font-size:35px;
+            font-size: 35px;
             top: 10px;
             right: 10px;
             cursor: pointer;
+            color: aliceblue;
         }
 
         .btn-outline-success:hover {
@@ -48,6 +70,9 @@
             color: #fff;
         }
 
+        .dataTables_wrapper {
+            position: relative;
+        }
     </style>
 </head>
 
@@ -56,9 +81,10 @@
     <script src="https://unpkg.com/vuex@4.1.0/dist/vuex.global.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="./js/App.js" type="module"></script>
 
