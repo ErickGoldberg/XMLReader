@@ -17,7 +17,8 @@
         .fa {
             display: flex;
             justify-content: center;
-            font-size: 26px;
+            align-items: center;
+            font-size: 22px;
             padding-top: 10px;
         }
 
@@ -35,7 +36,6 @@
         .dataTables_filter input {
             margin-right: 90px; /* Defina o valor de margem esquerda desejado */
             position: relative;
-
         }
 
         .dataTables_wrapper .dataTables_filter input {
@@ -70,9 +70,20 @@
             color: #fff;
         }
 
+        .table-container {
+            width: 40%;
+            padding-left: 10%;
+        }
+
         .dataTables_wrapper {
             position: relative;
         }
+
+        .ms-2 {
+            width: 50px !important;
+            display: flex;
+        }
+
     </style>
 </head>
 
@@ -84,7 +95,8 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/i18n/Portuguese.json"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="./js/App.js" type="module"></script>
 

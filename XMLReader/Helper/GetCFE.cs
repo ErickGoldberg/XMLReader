@@ -1,7 +1,6 @@
 ﻿using XMLReader.Data;
 using XMLReader.Data.Enum;
 using System.Xml;
-using DocumentFormat.OpenXml.Drawing;
 
 namespace XMLReader.Helper;
 

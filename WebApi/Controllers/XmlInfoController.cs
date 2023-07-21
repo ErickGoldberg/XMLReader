@@ -38,7 +38,7 @@ namespace WebApi.Controllers
             // Use os parâmetros recebidos em dtParams para aplicar a lógica de acordo com as colunas da sua tabela.
 
             // Exemplo de paginação
-            listaDeXmls = listaDeXmls.Skip(dtParams.Start).Take(dtParams.Length);
+            //listaDeXmls = listaDeXmls.Skip(dtParams.Start).Take(dtParams.Length);
 
             return listaDeXmls;
         }
@@ -77,3 +77,4 @@ namespace WebApi.Controllers
         }
     }
 }
+

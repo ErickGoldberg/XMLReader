@@ -7,6 +7,7 @@ export default {
     <div class="overlay">
       <modal />
     </div> 
+    <div class="table-container">
     <table class="table table-striped table-hover display mx-2" id="myTable">
       <thead>
         <tr>
@@ -23,6 +24,7 @@ export default {
         </tr>
       </thead>
     </table> 
+    </div> 
   `,
     name: "Table",
     mounted() {
@@ -54,11 +56,11 @@ export default {
                 },
                 order: [[0, "desc"]],
                 language: {
-                    lengthMenu: "Mostrar _MENU_ linhas",
-                    search: "Pesquisar",
+                    url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
                 },
                 responsive: true,
                 searching: true,
+                lengthChange: false,
                 columns: [
                     {
                         data: "type_xml",
@@ -88,7 +90,15 @@ export default {
                         data: "dtEmit",
                         render: function (data, type, row) {
                             const dateObj = new Date(data);
-                            return dateObj.toLocaleString();
+                            const options = {
+                                year: "numeric",
+                                month: "2-digit",
+                                day: "2-digit",
+                                hour: "2-digit",
+                                minute: "2-digit",
+                                second: "2-digit"
+                            };
+                            return dateObj.toLocaleString("pt-BR", options).replace(",", "");
                         },
                     },
                     { data: "cnpjEmit" },
