@@ -5,22 +5,22 @@ export default {
     components: { Modal },
     template: `
     <div class="overlay">
-      <modal />
+      <modal :dataTableRef="this"/>
     </div> 
     <div class="table-container">
-    <table class="table table-striped table-hover display mx-2" id="myTable">
-      <thead>
+    <table class="table table-striped mt-5  compact" style="font-size: 0.78rem;" id="myTable">
+      <thead >
         <tr>
-          <th scope="col">Tipo de XML</th>
-          <th scope="col">Número do XML</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Data de Emissão</th>
-          <th scope="col">CNPJ Emitente</th>
-          <th scope="col">Nome do Emitente</th>
-          <th scope="col">Chave do XML</th>
-          <th scope="col">CNPJ Destinatário</th>
-          <th scope="col">Nome Destinatário</th>
-          <th scope="col">Ações</th>
+          <th scope="col" style='width: 8%;'>Tipo de XML</th>
+          <th scope="col" style='width: 8%;'>Número do XML</th>
+          <th scope="col" style='width: 8%;'>Valor</th>
+          <th scope="col" style='width: 8%;'>Data de Emissão</th>
+          <th scope="col" style='width: 8%;'>CNPJ Emitente</th>
+          <th scope="col" style='width: 8%;'>Nome do Emitente</th>
+          <th scope="col" style='width: 8%;'>Chave do XML</th>
+          <th scope="col" style='width: 8%;'>CNPJ Destinatário</th>
+          <th scope="col" style='width: 8%;'>Nome Destinatário</th>
+          <th scope="col" style='width: 8%;'>Ações</th>
         </tr>
       </thead>
     </table> 

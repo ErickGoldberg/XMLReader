@@ -1,6 +1,9 @@
 import { UseStore } from "../store/Main.js";
 
 export default {
+    props: {
+        dataTableRef: Object, 
+    },
     template: `
     <div>
       <button class="btn btn-outline-success" @click="openModal" style="color:#0D6efd; border-color:#0D6efd; whidth: 50px;  float:right; margin-right:10px; margin-bottom: 20px;">Inserir</button>
@@ -48,9 +51,8 @@ export default {
                 }
             }).then(() => {
                 window.alert("Cadastro realizado com sucesso.");
-                setTimeout(() => {
-                    location.reload();
-                }, 1000);
+                this.dataTableRef.initializeDataTable();
+                this.closeModal();
             })
         },  
         onChangeFile(event) {

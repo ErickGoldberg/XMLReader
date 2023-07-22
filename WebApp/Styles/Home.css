@@ -1,0 +1,74 @@
+.fa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    padding-top: 10px;
+}
+
+.modal {
+    position: fixed;
+    width: 35%;
+    height: 100%;
+    left: 36%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.dataTables_filter input {
+    margin-right: 60px; /* Defina o valor de margem esquerda desejado */
+    position: relative;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    right: 0;
+    float: right;
+    z-index: 1;
+    margin-right: 6%;
+}
+
+
+.modal-content {
+    background-color: #0D6efd;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.modal-close {
+    position: absolute;
+    font-size: 35px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.btn-outline-success:hover {
+    background-color: white;
+    color: #fff;
+}
+
+.table-container {
+    margin: 0 8% !important;
+}
+
+.ms-2 {
+    width: 50px !important;
+    display: flex;
+}
+
+    /* Adicione esta regra para criar um espaço invisível na lateral direita */
+    .dataTables_wrapper .dataTable::after {
+        content: "";
+        display: block;
+        width: 10%; /* Espaço invisível com a mesma largura da margem */
+        height: 1px; /* Altura mínima para o espaço ser considerado */
+        visibility: hidden; /* Torna o espaço invisível */
+    }

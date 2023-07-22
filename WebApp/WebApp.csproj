@@ -182,7 +182,7 @@
     <Content Include="Js\Store\Consts.js" />
     <Content Include="Js\Store\Main.js" />
     <Content Include="mongocrypt.dll" />
-    <Content Include="Styles\styles.css" />
+    <Content Include="Styles\Home.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
