@@ -22,6 +22,7 @@ namespace WebApi.Controllers
             _services = services;
         }
 
+        /*
         [Route("ListXml")]
         [HttpGet]
         public IActionResult ListarXmls()
@@ -31,18 +32,7 @@ namespace WebApi.Controllers
             List<XmlInfoDTO> listaDeXmlsDTO = UtilsApi.ParseBsonDocumentsToXMl(listaDeXmls);
             return Ok(new { data = listaDeXmlsDTO }); // Enviar os dados no formato esperado pelo DataTables
         }
-
-        private IEnumerable<BsonDocument> ApplyDataTablesProcessing(IEnumerable<BsonDocument> listaDeXmls, DataTablesParams dtParams)
-        {
-            // Implemente aqui a lógica de ordenação, busca e paginação do lado do servidor.
-            // Use os parâmetros recebidos em dtParams para aplicar a lógica de acordo com as colunas da sua tabela.
-
-            // Exemplo de paginação
-            //listaDeXmls = listaDeXmls.Skip(dtParams.Start).Take(dtParams.Length);
-
-            return listaDeXmls;
-        }
-
+        */
 
         [HttpPost("PostXml")]
         public async Task<IActionResult> CadastrarXml(IFormFile file)
@@ -60,6 +50,43 @@ namespace WebApi.Controllers
 
             return Ok(xml);
         }
+
+        [HttpPost]
+        public IActionResult CustomServerSideSearchAction()
+        {
+            try
+            {
+                var draw = Request.Form["draw"].FirstOrDefault();
+                var start = Request.Form["start"].FirstOrDefault();
+                var length = Request.Form["length"].FirstOrDefault();
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][data]"].FirstOrDefault();
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+                int pageSize = length != null ? Convert.ToInt32(length) : 10;
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+                long recordsTotal = 0;
+
+                var actionsMongo = new ActionsMongo();
+                var documents = actionsMongo.FindAll(skip, pageSize, out recordsTotal, searchValue);
+                var customerData = UtilsApi.ParseBsonDocumentsToXMl(documents);
+
+                var jsonData = new
+                {
+                    draw = draw,
+                    recordsFiltered = recordsTotal,
+                    recordsTotal = recordsTotal,
+                    data = customerData
+                };
+                return Ok(jsonData);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+
+
 
         [Route("DeleteXml")]
         public async Task<IActionResult> DeleteXml(string id)

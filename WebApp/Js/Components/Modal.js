@@ -6,7 +6,7 @@ export default {
     },
     template: `
     <div>
-      <button class="btn btn-outline-success" @click="openModal" style="color:#0D6efd; border-color:#0D6efd; whidth: 50px;  float:right; margin-right:10px; margin-bottom: 20px;">Inserir</button>
+      <button class="btn btn-outline-success" @click="openModal" style="color:#0D6efd; border-color:#0D6efd; whidth: 50px;  float:right; margin-right:10px; ">Inserir</button>
       <div v-if="isModalOpen" class="modal">
         <div class="modal-content">   
           <span class="modal-close" @click="closeModal" style="float: right; border-color: white;">&times;</span>

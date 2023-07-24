@@ -57,6 +57,7 @@
 
 .table-container {
     margin: 0 8% !important;
+    position: relative;
 }
 
 .ms-2 {
@@ -64,11 +65,19 @@
     display: flex;
 }
 
-    /* Adicione esta regra para criar um espaço invisível na lateral direita */
-    .dataTables_wrapper .dataTable::after {
-        content: "";
-        display: block;
-        width: 10%; /* Espaço invisível com a mesma largura da margem */
-        height: 1px; /* Altura mínima para o espaço ser considerado */
-        visibility: hidden; /* Torna o espaço invisível */
-    }
+/* Adicione esta regra para criar um espaço invisível na lateral direita */
+.dataTables_wrapper .dataTable::after {
+    content: "";
+    display: block;
+    width: 10%; /* Espaço invisível com a mesma largura da margem */
+    height: 1px; /* Altura mínima para o espaço ser considerado */
+    visibility: hidden; /* Torna o espaço invisível */
+}
+
+.w-25 {
+    width: 15% !important;
+}
+
+.my-custom-form {
+    margin-right: 12% !important;
+}

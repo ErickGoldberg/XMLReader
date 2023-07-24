@@ -19,15 +19,21 @@ namespace WebApi.Utils
             return listaDTOs;
         }
 
-        public static List<BsonDocument> YourCustomSearchFunc( ActionsMongo _services)
+        public static List<BsonDocument> YourCustomSearchFunc(DataTablesParams model, out long totalResultsCount, ActionsMongo _services)
         {
-            var result = _services.FindAll();
+            var take = model.length;
+            var skip = model.start;
+            var searchValue = model.search.value;
+
+            // search the dbase taking into consideration table sorting and paging
+            var result = _services.FindAll(skip, take, out totalResultsCount, searchValue);
             if (result == null)
             {
                 return new List<BsonDocument>();
             }
             return result;
         }
+
 
         public static IXml CriarIXml(EnumTypeXml typeXml, XmlDocument document)
         {

@@ -12,4 +12,4 @@ const app = Vue.createApp({
     `,
 });
 
-app.use(store).mount("#app");
+app.use(store, key).mount("#app");

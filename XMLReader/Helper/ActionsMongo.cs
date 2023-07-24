@@ -1,5 +1,6 @@
 ﻿using MongoConnectXMl.Repository;
 using MongoDB.Bson;
+using MongoDB.Driver;
 using XMLReader.Data;
 
 namespace XMLReader.Helper
@@ -29,11 +30,19 @@ namespace XMLReader.Helper
             _repository.CreateListXmls(listaAux);
         }
 
-        public List<BsonDocument> FindAll()
+        public List<BsonDocument> FindAll(int? skip, int? take, out long totalResultsCount, string? searchValue)
         {
-            List<BsonDocument> xmls = _repository.GetAllXmls();
-            return xmls.ToList();
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                return _repository.GetAllXmls(skip, take, out totalResultsCount);
+            }
+            else
+            {
+                return _repository.SearchXmlsByName(searchValue, skip, take, out totalResultsCount);
+            }
         }
+
+
 
         public void UpdateXML(ObjectId id, BsonDocument document)
         {

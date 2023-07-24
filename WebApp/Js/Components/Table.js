@@ -4,6 +4,7 @@ import Modal from './Modal.js';
 export default {
     components: { Modal },
     template: `
+    
     <div class="overlay">
       <modal :dataTableRef="this"/>
     </div> 
@@ -30,6 +31,15 @@ export default {
     mounted() {
         this.initializeDataTable();
     },
+    mounted() {
+        const self = this;
+        this.initializeDataTable();
+
+        // Adicione um evento de escuta para a pesquisa na tabela
+        $(this.$el).on("keyup", 'input[type="search"]', function () {
+            self.dataTableInstance.search(this.value).draw();
+        });
+    },
     methods: {
         initializeDataTable() {
             const self = this;
@@ -40,15 +50,21 @@ export default {
 
             this.dataTableInstance = new DataTable("#myTable", {
                 serverSide: true,
+                responsive: true,
+                pageLength: 15,
+                paging: true,
+                ordering: true,
+                searching: true,
+                processing: true,
                 ajax: {
-                    url: "https://localhost:7196/XmlInfo/ListXml",
-                    type: "GET", // Use GET method for server-side rendering
+                    url: "https://localhost:7196/XmlInfo",
+                    type: "POST", 
                     dataType: "json",
                     data: function (data) {
-                        // No need to add any data here, as DataTables will automatically send the necessary parameters for server-side processing.
+                       
                     },
                     dataSrc: function (json) {
-                        return json.data; // Assuming your API returns an array with 'data' property
+                        return json.data; // JSON que contém os dados retornados pelo servidor
                     },
                     error: function (xhr, textStatus, errorThrown) {
                         console.error(errorThrown);
@@ -58,9 +74,7 @@ export default {
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
                 },
-                responsive: true,
-                searching: true,
-                lengthChange: false,
+                lengthChange: false,     
                 columns: [
                     {
                         data: "type_xml",
@@ -131,8 +145,15 @@ export default {
                 const itemId = $(this).data("id");
                 self.excluirItem(itemId);
             });
-        },
 
+            this.dataTableInstance.on('init.dt', function () {
+                // Define a opção searchCols com o valor de pesquisa padrão para todas as colunas
+                self.dataTableInstance
+                    .columns()
+                    .search(self.filtro !== null ? self.filtro : '')
+                    .draw();
+            });
+        },
         excluirItem(itemId) {
             const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");
             if (confirmed) {
@@ -159,8 +180,9 @@ export default {
     },
     setup() {
         const store = UseStore();
+
         return {
-            store,
+            store
         };
     },
     data() {
@@ -168,6 +190,7 @@ export default {
             xmlData: [],
             showInput: false,
             dataTableInstance: null,
+            filtro: null
         };
     },
 };

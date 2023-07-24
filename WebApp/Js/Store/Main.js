@@ -1,4 +1,4 @@
-﻿import { RETURN_XMLS, GET_XMLS, GET_FILTERS, POST_XML } from './Consts.js';
+﻿import { RETURN_XMLS, GET_XMLS, GET_FILTERS } from './Consts.js';
 import http from '../protocols/AxiosConection.js';
 
 export const key = Symbol();
