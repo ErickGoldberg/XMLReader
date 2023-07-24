@@ -47,15 +47,22 @@ public class XMLRepository<T>
         return xmls;
     }
 
-    public List<T> SearchXmlsByName(string searchValue, int? skip, int? take, out long totalResultsCount)
+    public List<T> SearchXmlsByName(string searchValue, string[] searchFields, int? skip, int? take, out long totalResultsCount)
     {
-        var filter = Builders<T>.Filter.Regex("NameEmit", new BsonRegularExpression(searchValue, "i")); // O "i" torna a pesquisa case-insensitive
+        var builder = Builders<T>.Filter;
+        var filters = new List<FilterDefinition<T>>();
 
-        // Contagem total de resultados após a pesquisa
-        totalResultsCount = _xmlCollection.CountDocuments(filter);
+        foreach (var field in searchFields)
+        {
+            var filter = builder.Regex(field, new BsonRegularExpression(searchValue, "i"));
+            filters.Add(filter);
+        }
 
-        // Realiza a busca paginada com base nos parâmetros skip e take
-        var result = _xmlCollection.Find(filter).Skip(skip).Limit(take).ToList();
+        var combinedFilter = builder.Or(filters);
+
+        totalResultsCount = _xmlCollection.CountDocuments(combinedFilter);
+
+        var result = _xmlCollection.Find(combinedFilter).Skip(skip).Limit(take).ToList();
 
         return result;
     }

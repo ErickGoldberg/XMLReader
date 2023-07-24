@@ -18,7 +18,7 @@
 }
 
 .dataTables_filter input {
-    margin-right: 60px; /* Defina o valor de margem esquerda desejado */
+    margin-right: 80px; 
     position: relative;
 }
 
@@ -65,13 +65,12 @@
     display: flex;
 }
 
-/* Adicione esta regra para criar um espaço invisível na lateral direita */
 .dataTables_wrapper .dataTable::after {
     content: "";
     display: block;
-    width: 10%; /* Espaço invisível com a mesma largura da margem */
-    height: 1px; /* Altura mínima para o espaço ser considerado */
-    visibility: hidden; /* Torna o espaço invisível */
+    width: 10%; 
+    height: 1px; 
+    visibility: hidden; 
 }
 
 .w-25 {

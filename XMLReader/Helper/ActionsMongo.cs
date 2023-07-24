@@ -38,16 +38,14 @@ namespace XMLReader.Helper
             }
             else
             {
-                return _repository.SearchXmlsByName(searchValue, skip, take, out totalResultsCount);
+                // Array contendo os nomes dos campos que você deseja pesquisar
+                string[] searchFields = { "NameEmit", "CnpjEmit" };
+                return _repository.SearchXmlsByName(searchValue, searchFields, skip, take, out totalResultsCount);
             }
         }
 
-
-
         public void UpdateXML(ObjectId id, BsonDocument document)
         {
-
-            //BsonDocument document = GetBsonDocument(xml);
             _repository.UpdateXML(document => document["_id"].Equals(id), document);
         }
 

@@ -24,9 +24,11 @@ namespace WebApi.Utils
             var take = model.length;
             var skip = model.start;
             var searchValue = model.search.value;
+            //var sortColumnIndex = model.order[0].column; // Índice da coluna que está sendo ordenada
+            //var sortColumnDirection = model.order[0].dir; // Direção da ordenação (ascendente ou descendente)
 
             // search the dbase taking into consideration table sorting and paging
-            var result = _services.FindAll(skip, take, out totalResultsCount, searchValue);
+            var result = _services.FindAll(skip, take, out totalResultsCount, searchValue );
             if (result == null)
             {
                 return new List<BsonDocument>();

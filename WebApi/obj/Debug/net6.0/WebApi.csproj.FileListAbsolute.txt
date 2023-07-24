@@ -207,3 +207,4 @@ C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\WebApi\obj\Debug\
 C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+C:\Users\Dev\Desktop\XMLReader\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll

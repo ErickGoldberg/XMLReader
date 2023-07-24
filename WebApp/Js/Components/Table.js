@@ -12,16 +12,16 @@ export default {
     <table class="table table-striped mt-5  compact" style="font-size: 0.78rem;" id="myTable">
       <thead >
         <tr>
-          <th scope="col" style='width: 8%;'>Tipo de XML</th>
-          <th scope="col" style='width: 8%;'>Número do XML</th>
-          <th scope="col" style='width: 8%;'>Valor</th>
+          <th scope="col" style='width: 4%;'>Tipo de XML</th>
+          <th scope="col" style='width: 6%;'>Número do XML</th>
+          <th scope="col" style='width: 6%;'>Valor</th>
           <th scope="col" style='width: 8%;'>Data de Emissão</th>
           <th scope="col" style='width: 8%;'>CNPJ Emitente</th>
-          <th scope="col" style='width: 8%;'>Nome do Emitente</th>
+          <th scope="col" style='width: 12%;'>Nome do Emitente</th>
           <th scope="col" style='width: 8%;'>Chave do XML</th>
           <th scope="col" style='width: 8%;'>CNPJ Destinatário</th>
-          <th scope="col" style='width: 8%;'>Nome Destinatário</th>
-          <th scope="col" style='width: 8%;'>Ações</th>
+          <th scope="col" style='width: 12%;'>Nome Destinatário</th>
+          <th scope="col" style='width: 1%;'>Ações</th>
         </tr>
       </thead>
     </table> 
@@ -56,13 +56,11 @@ export default {
                 ordering: true,
                 searching: true,
                 processing: true,
+                order: [],
                 ajax: {
                     url: "https://localhost:7196/XmlInfo",
-                    type: "POST", 
+                    type: "POST",
                     dataType: "json",
-                    data: function (data) {
-                       
-                    },
                     dataSrc: function (json) {
                         return json.data; // JSON que contém os dados retornados pelo servidor
                     },
@@ -74,7 +72,7 @@ export default {
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
                 },
-                lengthChange: false,     
+                lengthChange: false,
                 columns: [
                     {
                         data: "type_xml",
@@ -147,12 +145,44 @@ export default {
             });
 
             this.dataTableInstance.on('init.dt', function () {
-                // Define a opção searchCols com o valor de pesquisa padrão para todas as colunas
                 self.dataTableInstance
                     .columns()
                     .search(self.filtro !== null ? self.filtro : '')
                     .draw();
             });
+
+            //$(this.dataTableInstance.table().header()).on("click", "th", function () {
+
+            //    const columnIndexs = self.dataTableInstance.column(this).index();
+            //    const columnNames = self.dataTableInstance.column(this).dataSrc();
+
+
+            //    const columnIndex = self.dataTableInstance.column(this).index();
+            //    const columnName = self.dataTableInstance.column(this).dataSrc();
+            //    var descOrAsc =  self.dataTableInstance.order()[0][0]
+            //    const sortDirection = self.dataTableInstance.order()[0][0] === "desc" ? "asc" : "desc";
+
+            //    self.dataTableInstance.order([[columnIndex, sortDirection]]).draw();
+
+            //    self.sortDirection = sortDirection;
+
+            //    self.dataTableInstance.ajax.reload(function (data) {
+
+            //    data.sortDirection = sortDirection;
+
+            //    return data; 
+            //    });
+            //});
+
+
+
+            $('#botao-apaga-tabela').on('click', function () {
+                tabela.destroy();
+                tabela = $('#myTable').DataTable({
+                    
+                });
+            });
+
         },
         excluirItem(itemId) {
             const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");

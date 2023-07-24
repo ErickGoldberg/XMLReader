@@ -301,3 +301,5 @@ C:\Users\erick\OneDrive\Área de Trabalho\XmlReader\XMLReader\WebApp\bin\System.
 C:\Users\erick\OneDrive\Área de Trabalho\XmlReader\XMLReader\WebApp\bin\System.Security.Principal.Windows.xml
 C:\Users\erick\OneDrive\Área de Trabalho\XmlReader\XMLReader\WebApp\bin\System.Text.Encoding.CodePages.xml
 C:\Users\erick\OneDrive\Área de Trabalho\XmlReader\XMLReader\WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Dev\Desktop\XMLReader\WebApp\bin\Newtonsoft.Json.dll
+C:\Users\Dev\Desktop\XMLReader\WebApp\bin\Newtonsoft.Json.xml

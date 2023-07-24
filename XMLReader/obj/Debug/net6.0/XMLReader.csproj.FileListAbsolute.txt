@@ -202,3 +202,4 @@ C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Deb
 C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.pdb
 C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\XMLReader.genruntimeconfig.cache
 C:\Users\erick\OneDrive\Área de Trabalho\XMLReader1\XMLReader\XMLReader\obj\Debug\net6.0\ref\XMLReader.dll
+C:\Users\Dev\Desktop\XMLReader\XMLReader\bin\Debug\net6.0\Newtonsoft.Json.dll
