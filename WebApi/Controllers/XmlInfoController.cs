@@ -1,15 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Xml;
-using WebApi.DTO;
 using WebApi.Utils;
 using XMLReader.Data.Enum;
 using XMLReader.Data;
 using XMLReader.Helper;
 using XMLReader.Utils;
 using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.IO;
-using Newtonsoft.Json;
+
 
 namespace WebApi.Controllers
 {

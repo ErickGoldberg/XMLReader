@@ -51,18 +51,20 @@ export default {
             this.dataTableInstance = new DataTable("#myTable", {
                 serverSide: true,
                 responsive: true,
-                pageLength: 15,
+                pageLength: 50,
                 paging: true,
                 ordering: true,
                 searching: true,
                 processing: true,
+                stateSave: true,
                 order: [],
                 ajax: {
                     url: "https://localhost:7196/XmlInfo",
                     type: "POST",
                     dataType: "json",
                     dataSrc: function (json) {
-                        return json.data; // JSON que contém os dados retornados pelo servidor
+                        self.recordsTotal = json.recordsTotal; // Atualiza o número total de registros
+                        return json.data;
                     },
                     error: function (xhr, textStatus, errorThrown) {
                         console.error(errorThrown);
@@ -72,7 +74,13 @@ export default {
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
                 },
+
                 lengthChange: false,
+                initComplete: function () {
+                    const pageInfo = self.dataTableInstance.page.info();
+                    self.dataTableInstance.page(pageInfo.page).draw(false);
+                    console.log(pageInfo)
+                },
                 columns: [
                     {
                         data: "type_xml",
@@ -139,6 +147,10 @@ export default {
                 ],
             });
 
+            $(this.dataTableInstance.table().header()).on("click", "th", function () {
+                self.handleOrdering();
+            });
+
             $(this.dataTableInstance.table().body()).on("click", "i.fa-trash", function () {
                 const itemId = $(this).data("id");
                 self.excluirItem(itemId);
@@ -151,30 +163,9 @@ export default {
                     .draw();
             });
 
-            //$(this.dataTableInstance.table().header()).on("click", "th", function () {
-
-            //    const columnIndexs = self.dataTableInstance.column(this).index();
-            //    const columnNames = self.dataTableInstance.column(this).dataSrc();
-
-
-            //    const columnIndex = self.dataTableInstance.column(this).index();
-            //    const columnName = self.dataTableInstance.column(this).dataSrc();
-            //    var descOrAsc =  self.dataTableInstance.order()[0][0]
-            //    const sortDirection = self.dataTableInstance.order()[0][0] === "desc" ? "asc" : "desc";
-
-            //    self.dataTableInstance.order([[columnIndex, sortDirection]]).draw();
-
-            //    self.sortDirection = sortDirection;
-
-            //    self.dataTableInstance.ajax.reload(function (data) {
-
-            //    data.sortDirection = sortDirection;
-
-            //    return data; 
-            //    });
-            //});
-
-
+            this.dataTableInstance.on("draw.dt", function () {
+                self.handleStateSave();
+            });
 
             $('#botao-apaga-tabela').on('click', function () {
                 tabela.destroy();
@@ -184,6 +175,17 @@ export default {
             });
 
         },
+        handleOrdering() {
+            const pageInfo = this.dataTableInstance.page.info();
+            const currentPage = pageInfo.page;
+            const pageSize = pageInfo.length;
+            const totalRecords = this.recordsTotal;
+
+            const lastPage = Math.floor(this.lastPage * pageSize / totalRecords);
+
+            this.dataTableInstance.page(lastPage).draw('page');
+        },
+
         excluirItem(itemId) {
             const confirmed = confirm("Deseja realmente excluir o item com ID " + itemId + "?");
             if (confirmed) {
